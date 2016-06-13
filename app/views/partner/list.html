@@ -1,0 +1,38 @@
+{% extends '../layout.html' %}
+
+{% block title %}Partners{% endblock %}
+
+{% block content %}
+  <p>Your invite code is: <strong>{{ user.code }}</strong></p>
+  <h1>Partners</h1>
+
+  <div class="ui cards">
+  {% for partner in data %}
+    <div class="ui card" rel="{{ partner._id.toString() }}">
+      <div class="image dimmable">
+        <img src="{{ partner.avatar || partner.pics[0] }}">
+      </div>
+      <div class="content">
+        <div class="header">{{ partner.name }}</div>
+        <div class="meta">
+          {% if partner.socialMedia.twitter %}
+          <a class="group" href="https://twitter.com/{{ partner.socialMedia.twitter }}" target="_blank"> <i class="twitter icon"></i> {{ partner.socialMedia.twitter }}</a>
+          {% endif %}
+          {% if partner.socialMedia.instagram %}
+          <a class="group" href="https://www.instagram.com/{{ partner.socialMedia.instagram }}" target="_blank"> <i class="instagram icon"></i> {{ partner.socialMedia.instagram }}</a>
+          {% endif %}
+        </div>
+        <div class="description">
+          <p>{{ partner.birthday | date('Y-m-d') }}</p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}
+
+{% block script %}
+<script>
+
+</script>
+{% endblock %}

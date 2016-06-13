@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>{% block title %}Charly Partner On Boarding Admin{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+</head>
+<body>
+  <div class="ui container">
+    {% block content %}
+      <p>Missing content!</p>
+    {% endblock %}
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="js/semantic.min.js"></script>
+  {% block script %}
+  {% endblock %}
+</body>
+</html>
